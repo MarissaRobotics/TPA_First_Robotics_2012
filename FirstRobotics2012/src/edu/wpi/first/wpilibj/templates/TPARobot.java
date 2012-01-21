@@ -41,7 +41,6 @@ public class TPARobot extends IterativeRobot {
     double theDriveRotation;                // Value the robot will rotate
     public double theMaxSpeed;              // Multiplier for speed, determined by Z-Axis on left stick
     double theSonarDistance;                // The distance in inches which the sonar returns
-    Ultrasonic theSonar;                    // The LV-MaxSonar EZ1
 
 
     
@@ -288,38 +287,6 @@ public class TPARobot extends IterativeRobot {
             theRobotDrive.mecanumBrake(theFrontLeftOutput, theRearLeftOutput, theFrontRightOutput, theRearRightOutput);
         }
     }
-    /*--------------------------------------------------------------------------*/
-    
-    
-    
-    /*--------------------------------------------------------------------------*/
-    /*
-     * Author:  Marissa Beene
-     * Date:    1/21/12
-     * Purpose: To work a sonar sensor and return the distance in inches
-     * Inputs:  Sonar aSonar - the sonar being read from
-     * Outputs: None
-     */  
-    
-    public void runSonar(Ultrasonic aSonar){
-        // Enable the sonar if it is not enabled
-        if(!aSonar.isEnabled()){
-            aSonar.setEnabled(true);
-        }
-        // Get the distance from the nearest object
-        theSonarDistance = aSonar.getRangeInches();
-        
-        // If there is a reading, print it out. Otherwise print out an error message
-        if (theSonarDistance != 0){
-            System.out.print("The distance from the nearest object is ");
-            System.out.println(theSonarDistance);
-        }
-        else{
-            System.out.println("There is no reading yet");
-        }
-        
-    }
-    
     /*--------------------------------------------------------------------------*/
     
     
